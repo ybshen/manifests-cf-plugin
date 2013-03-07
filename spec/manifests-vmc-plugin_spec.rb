@@ -53,6 +53,7 @@ describe VMCManifests do
         :memory => 2048,
         :total_instances => 2,
         :command => "ruby main.rb",
+        :buildpack => "git://example.com/foo.git",
         :routes => [
           fake(:route,
                :host => "some-app-name",
@@ -83,6 +84,7 @@ describe VMCManifests do
     its(["path"]) { should eq "some-path" }
     its(["url"]) { should eq "some-app-name.${target-base}" }
     its(["command"]) { should eq "ruby main.rb" }
+    its(["buildpack"]) { should eq "git://example.com/foo.git" }
 
     it "contains the service information" do
       expect(subject["services"]).to be_a Hash

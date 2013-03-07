@@ -186,6 +186,10 @@ module VMCManifests
       meta["command"] = cmd
     end
 
+    if buildpack = app.buildpack
+      meta["buildpack"] = buildpack
+    end
+
     meta
   end
 
