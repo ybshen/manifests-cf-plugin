@@ -3,10 +3,13 @@ module VMCManifests
     # parse a manifest and merge with its inherited manifests
     def build(file)
       manifest = YAML.load_file file
+      raise InvalidManifest.new(file) unless manifest
 
       Array(manifest["inherit"]).each do |path|
         manifest = merge_parent(path, manifest)
       end
+
+      manifest.delete("inherit")
 
       manifest
     end

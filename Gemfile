@@ -15,4 +15,5 @@ group :test do
   gem "rspec", "~> 2.11"
   gem "webmock", "~> 1.9"
   gem "rr", "~> 1.0"
+  gem "fakefs"
 end

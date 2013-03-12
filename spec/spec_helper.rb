@@ -6,6 +6,7 @@ require "cfoundry"
 require "webmock"
 require "cfoundry/test_support"
 require "vmc/test_support"
+require "fakefs/safe"
 
 WebMock.disable_net_connect!
 
