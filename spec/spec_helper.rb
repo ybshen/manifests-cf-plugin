@@ -12,6 +12,6 @@ WebMock.disable_net_connect!
 
 RSpec.configure do |c|
   c.include Fake::FakeMethods
-  c.include VMC::TestSupport::InteractHelper
+  c.include InteractHelper
   c.mock_with :rr
 end
