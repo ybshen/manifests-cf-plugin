@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/cloudfoundry/manifests-vmc-plugin.png)](https://travis-ci.org/cloudfoundry/manifests-vmc-plugin)
+[![Build Status](https://travis-ci.org/cloudfoundry/manifests-cf-plugin.png)](https://travis-ci.org/cloudfoundry/manifests-cf-plugin)
 
 ## Manifests
 ### Info
@@ -6,6 +6,6 @@ With this plugin enabled, any configuration changes you make using the VMC `star
 
 ### Installation
 ```
-gem install manifests-vmc-plugin
+gem install manifests-cf-plugin
 ```
 
