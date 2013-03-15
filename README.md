@@ -2,7 +2,7 @@
 
 ## Manifests
 ### Info
-With this plugin enabled, any configuration changes you make using the VMC `start`, `restart`, `instances`, `logs`, `env`, `health`, `stats`, `scale`, and `app` commands will be saved to a file called *manifest.yml*.
+With this plugin enabled, any configuration changes you make using the CF `start`, `restart`, `instances`, `logs`, `env`, `health`, `stats`, `scale`, and `app` commands will be saved to a file called *manifest.yml*.
 
 ### Installation
 ```

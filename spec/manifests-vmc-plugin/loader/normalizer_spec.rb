@@ -1,11 +1,11 @@
 require "spec_helper"
 
-require "manifests-vmc-plugin/loader"
+require "manifests-cf-plugin/loader"
 
 
-describe VMCManifests::Normalizer do
+describe CFManifests::Normalizer do
   let(:manifest) { {} }
-  let(:loader) { VMCManifests::Loader.new(nil, nil) }
+  let(:loader) { CFManifests::Loader.new(nil, nil) }
 
   describe '#normalize!' do
     subject do

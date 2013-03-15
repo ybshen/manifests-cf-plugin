@@ -1,4 +1,4 @@
-module VMCManifests
+module CFManifests
   class InvalidManifest < RuntimeError
     attr_reader :file
 

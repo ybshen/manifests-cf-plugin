@@ -1,3 +1,3 @@
-module VMCManifests
+module CFManifests
   VERSION = "0.6.3.rc2".freeze
 end

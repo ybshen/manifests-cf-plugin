@@ -1,15 +1,15 @@
 require 'spec_helper'
-require 'manifests-vmc-plugin'
+require 'manifests-cf-plugin'
 
-describe VMCManifests do
+describe CFManifests do
   let(:inputs_hash) { {} }
   let(:given_hash) { {} }
   let(:global_hash) { {} }
   let(:inputs) { Mothership::Inputs.new(nil, nil, inputs_hash, given_hash, global_hash) }
 
   let(:cmd) do
-    manifest = VMC::App::Push.new(nil, inputs)
-    manifest.extend VMCManifests
+    manifest = CF::App::Push.new(nil, inputs)
+    manifest.extend CFManifests
     stub(manifest).client { client }
     manifest
   end
@@ -276,7 +276,7 @@ describe VMCManifests do
         let(:given_hash) { { :apps => ["/abc/xxx"] } }
 
         it "fails with a manifest-specific method (i.e. path not in manifest)" do
-          expect { subject }.to raise_error(VMC::UserError, /Path .+ is not present in manifest/)
+          expect { subject }.to raise_error(CF::UserError, /Path .+ is not present in manifest/)
         end
       end
     end

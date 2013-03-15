@@ -1,9 +1,9 @@
 require "spec_helper"
 
-require "manifests-vmc-plugin/errors"
+require "manifests-cf-plugin/errors"
 
 
-describe VMCManifests::InvalidManifest do
+describe CFManifests::InvalidManifest do
   let(:file) { "/path/to/file" }
 
   subject { described_class.new(file) }

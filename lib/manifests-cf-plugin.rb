@@ -1,10 +1,10 @@
 require "yaml"
 require "set"
 
-require "manifests-vmc-plugin/loader"
+require "manifests-cf-plugin/loader"
 
 
-module VMCManifests
+module CFManifests
   MANIFEST_FILE = "manifest.yml"
 
   @@showed_manifest_usage = false
@@ -215,7 +215,7 @@ module VMCManifests
 
   def warn_reset_changes
     line c("Not applying manifest changes without --reset", :warning)
-    line "See `vmc diff` for more details."
+    line "See `cf diff` for more details."
     line
   end
 

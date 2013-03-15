@@ -1,6 +1,6 @@
 require "spec_helper"
 
-require "manifests-vmc-plugin/plugin"
+require "manifests-cf-plugin/plugin"
 
 
 describe ManifestsPlugin do
@@ -198,7 +198,7 @@ describe ManifestsPlugin do
         }
       end
 
-      # vmc push foo
+      # cf push foo
       context "and a name is given" do
         context "and the name is present in the manifest" do
           let(:given_hash) { { :name => "a" } }
@@ -238,12 +238,12 @@ describe ManifestsPlugin do
           let(:given_hash) { { :name => "x" } }
 
           it "fails, saying that name was not found in the manifest" do
-            expect { subject }.to raise_error(VMC::UserError, /Could not find .+ in the manifest./)
+            expect { subject }.to raise_error(CF::UserError, /Could not find .+ in the manifest./)
           end
         end
       end
 
-      # vmc push ./abc
+      # cf push ./abc
       context "and a path is given" do
         context "and there are apps matching that path in the manifest" do
           let(:manifest) do
@@ -280,7 +280,7 @@ describe ManifestsPlugin do
           let(:given_hash) { { :name => "/abc/x" } }
 
           it "fails, saying that the path was not found in the manifest" do
-            expect { subject }.to raise_error(VMC::UserError, /Path .+ is not present in manifest/)
+            expect { subject }.to raise_error(CF::UserError, /Path .+ is not present in manifest/)
           end
         end
       end

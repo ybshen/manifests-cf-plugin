@@ -5,11 +5,11 @@
 #############
 
 $:.push File.expand_path("../lib", __FILE__)
-require "manifests-vmc-plugin/version"
+require "manifests-cf-plugin/version"
 
 Gem::Specification.new do |s|
-  s.name        = "manifests-vmc-plugin"
-  s.version     = VMCManifests::VERSION.dup
+  s.name        = "manifests-cf-plugin"
+  s.version     = CFManifests::VERSION.dup
   s.authors     = ["Alex Suraci"]
   s.email       = ["asuraci@vmware.com"]
   s.homepage    = "http://cloudfoundry.com/"
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
     Cloud Foundry automation via manifest documents.
   }
 
-  s.rubyforge_project = "manifests-vmc-plugin"
+  s.rubyforge_project = "manifests-cf-plugin"
 
   s.add_runtime_dependency "cfoundry", ">= 0.5.3.rc5", "< 0.6"
 

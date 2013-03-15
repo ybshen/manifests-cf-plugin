@@ -1,4 +1,4 @@
-module VMCManifests
+module CFManifests
   module Resolver
     def resolve(manifest, resolver)
       new = {}

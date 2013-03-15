@@ -1,8 +1,8 @@
-require "manifests-vmc-plugin/loader/builder"
-require "manifests-vmc-plugin/loader/normalizer"
-require "manifests-vmc-plugin/loader/resolver"
+require "manifests-cf-plugin/loader/builder"
+require "manifests-cf-plugin/loader/normalizer"
+require "manifests-cf-plugin/loader/resolver"
 
-module VMCManifests
+module CFManifests
   class Loader
     include Builder
     include Normalizer

@@ -1,11 +1,11 @@
 require "spec_helper"
 
-require "manifests-vmc-plugin/loader"
-require "manifests-vmc-plugin/errors"
+require "manifests-cf-plugin/loader"
+require "manifests-cf-plugin/errors"
 
 
-describe VMCManifests::Builder do
-  subject { VMCManifests::Loader.new(nil, nil) }
+describe CFManifests::Builder do
+  subject { CFManifests::Loader.new(nil, nil) }
 
   describe "#build" do
     let(:file) { "manifest.yml" }
@@ -77,7 +77,7 @@ OTHER
       it "raises an error" do
         expect {
           subject.build(file)
-        }.to raise_error(VMCManifests::InvalidManifest)
+        }.to raise_error(CFManifests::InvalidManifest)
       end
     end
   end

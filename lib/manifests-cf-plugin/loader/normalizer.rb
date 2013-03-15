@@ -1,4 +1,4 @@
-module VMCManifests
+module CFManifests
   module Normalizer
     MANIFEST_META = ["applications", "properties"]
 

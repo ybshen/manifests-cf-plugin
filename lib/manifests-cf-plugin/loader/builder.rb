@@ -1,4 +1,4 @@
-module VMCManifests
+module CFManifests
   module Builder
     # parse a manifest and merge with its inherited manifests
     def build(file)

@@ -1,11 +1,11 @@
 require "pathname"
 
-require "vmc/plugin"
-require "manifests-vmc-plugin"
+require "cf/plugin"
+require "manifests-cf-plugin"
 
 
-class ManifestsPlugin < VMC::App::Base
-  include VMCManifests
+class ManifestsPlugin < CF::App::Base
+  include CFManifests
 
   option :manifest, :aliases => "-m", :value => :file,
     :desc => "Path to manifest file to use"
