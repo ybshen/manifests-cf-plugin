@@ -1,3 +1,3 @@
 module CFManifests
-  VERSION = "0.6.3.rc3".freeze
+  VERSION = "0.7.0.rc1".freeze
 end
