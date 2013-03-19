@@ -162,23 +162,15 @@ module CFManifests
       meta["services"] = {}
 
       services.each do |i|
-        if v2?
-          p = i.service_plan
-          s = p.service
+        p = i.service_plan
+        s = p.service
 
-          meta["services"][i.name] = {
-            "label" => s.label,
-            "provider" => s.provider,
-            "version" => s.version,
-            "plan" => p.name
-          }
-        else
-          meta["services"][i.name] = {
-            "vendor" => i.vendor,
-            "version" => i.version,
-            "tier" => i.tier
-          }
-        end
+        meta["services"][i.name] = {
+          "label" => s.label,
+          "provider" => s.provider,
+          "version" => s.version,
+          "plan" => p.name
+        }
       end
     end
 
@@ -287,14 +279,12 @@ module CFManifests
 
         fail "Unknown service offering: #{svc.inspect}." unless offering
 
-        if v2?
-          plan = offering.service_plans.find { |p|
-            p.name == (svc[:plan] || "D100")
-          }
+        plan = offering.service_plans.find { |p|
+          p.name == (svc[:plan] || "D100")
+        }
 
-          fail "Unknown service plan: #{svc[:plan]}." unless plan
-        end
-
+        fail "Unknown service plan: #{svc[:plan]}." unless plan
+      
         invoke :create_service,
           :name => name,
           :offering => offering,

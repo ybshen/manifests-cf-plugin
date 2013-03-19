@@ -30,7 +30,6 @@ describe CFManifests do
 
   before do
     stub(cmd).target_base { target_base }
-    stub(cmd).v2? { true }
 
     stub(cmd).manifest { manifest }
     stub(cmd).manifest_file { manifest_file }
