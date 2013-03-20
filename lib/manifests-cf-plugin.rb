@@ -148,8 +148,6 @@ module CFManifests
   def create_manifest_for(app, path)
     meta = {
       "name" => app.name,
-      "framework" => app.framework.name,
-      "runtime" => app.runtime.name,
       "memory" => human_size(app.memory * 1024 * 1024, 0),
       "instances" => app.total_instances,
       "url" => app.url ? app.url.sub(target_base, '${target-base}') : "none",

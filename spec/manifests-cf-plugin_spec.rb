@@ -47,8 +47,6 @@ describe CFManifests do
   describe '#create_manifest_for' do
     let(:app) {
       fake :app,
-        :framework => fake(:framework),
-        :runtime => fake(:runtime),
         :memory => 2048,
         :total_instances => 2,
         :command => "ruby main.rb",
@@ -76,8 +74,6 @@ describe CFManifests do
     subject { cmd.create_manifest_for(app, "some-path") }
 
     its(["name"]) { should eq app.name }
-    its(["framework"]) { should eq app.framework.name }
-    its(["runtime"]) { should eq app.runtime.name }
     its(["memory"]) { should eq "2G" }
     its(["instances"]) { should eq 2 }
     its(["path"]) { should eq "some-path" }
@@ -113,8 +109,6 @@ describe CFManifests do
     context 'when there is no url' do
       let(:app) {
         fake :app,
-          :framework => fake(:framework),
-          :runtime => fake(:runtime),
           :memory => 2048,
           :total_instances => 2
       }
@@ -125,8 +119,6 @@ describe CFManifests do
     context 'when there is no command' do
       let(:app) {
         fake :app,
-          :framework => fake(:framework),
-          :runtime => fake(:runtime),
           :memory => 2048,
           :total_instances => 2
       }
@@ -137,8 +129,6 @@ describe CFManifests do
     context 'when there are no service bindings' do
       let(:app) {
         fake :app,
-          :framework => fake(:framework),
-          :runtime => fake(:runtime),
           :memory => 2048,
           :total_instances => 2
       }

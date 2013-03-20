@@ -87,20 +87,19 @@ describe CFManifests::Normalizer do
 
       context 'and applications' do
         let(:manifest) {
-          { "runtime" => "ruby19",
-            "applications" => {
+          { "applications" => {
               "./foo" => { "name" => "foo" },
               "./bar" => { "name" => "bar" },
-              "./baz" => { "name" => "baz", "runtime" => "ruby18" }
+              "./baz" => { "name" => "baz" }
             }
           }
         }
 
         it "merges the toplevel attributes into the applications" do
           expect(subject[:applications]).to match_array [
-            { :name => "foo", :path => "./foo", :runtime => "ruby19" },
-            { :name => "bar", :path => "./bar", :runtime => "ruby19" },
-            { :name => "baz", :path => "./baz", :runtime => "ruby18" }
+            { :name => "foo", :path => "./foo" },
+            { :name => "bar", :path => "./bar" },
+            { :name => "baz", :path => "./baz" }
           ]
         end
       end
@@ -149,20 +148,6 @@ describe CFManifests::Normalizer do
     subject do
       loader.send(:normalize_app!, manifest)
       manifest
-    end
-
-    context 'with framework as a hash' do
-      let(:manifest) {
-        { "name" => "foo",
-          "framework" => { "name" => "ruby19", "mem" => "64M" }
-        }
-      }
-
-      it 'sets the framework to just the name' do
-        expect(subject).to eq(
-          "name" => "foo",
-          "framework" => "ruby19")
-      end
     end
 
     context 'with mem instead of memory' do

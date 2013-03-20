@@ -94,10 +94,6 @@ module CFManifests
     end
 
     def normalize_app!(app)
-      if app["framework"].is_a?(Hash)
-        app["framework"] = app["framework"]["name"]
-      end
-
       if app.key?("mem")
         app["memory"] = app.delete("mem")
       end
