@@ -1,5 +1,5 @@
 module CFManifests
-  class InvalidManifest < RuntimeError
+  class InvalidManifest < CF::UserFriendlyError
     attr_reader :file
 
     def initialize(file)
@@ -11,7 +11,7 @@ module CFManifests
     end
   end
 
-  class CircularDependency < RuntimeError
+  class CircularDependency < CF::UserFriendlyError
     def initialize(app)
       @app = app
     end
@@ -21,7 +21,7 @@ module CFManifests
     end
   end
 
-  class UnknownSymbol < RuntimeError
+  class UnknownSymbol < CF::UserFriendlyError
     def initialize(sym)
       @sym = sym
     end

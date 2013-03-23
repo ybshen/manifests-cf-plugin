@@ -1,9 +1,11 @@
+require "manifests-cf-plugin/errors"
+
 module CFManifests
   module Builder
     # parse a manifest and merge with its inherited manifests
     def build(file)
       manifest = YAML.load_file file
-      raise InvalidManifest.new(file) unless manifest
+      raise CFManifests::InvalidManifest.new(file) unless manifest
 
       Array(manifest["inherit"]).each do |path|
         manifest = merge_parent(path, manifest)

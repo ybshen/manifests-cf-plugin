@@ -1,12 +1,12 @@
 require "spec_helper"
-
 require "manifests-cf-plugin/errors"
-
 
 describe CFManifests::InvalidManifest do
   let(:file) { "/path/to/file" }
 
   subject { described_class.new(file) }
+
+  it { should be_kind_of CF::UserFriendlyError }
 
   describe "#initialize" do
     it "is initialized with a file" do
@@ -27,3 +27,18 @@ describe CFManifests::InvalidManifest do
     end
   end
 end
+
+describe CFManifests::CircularDependency do
+  let(:app) { "app" }
+  subject { described_class.new(app) }
+
+  it { should be_kind_of CF::UserFriendlyError }
+end
+
+describe CFManifests::UnknownSymbol do
+  let(:symbol) { "symbol" }
+  subject { described_class.new(symbol) }
+
+  it { should be_kind_of CF::UserFriendlyError }
+end
+

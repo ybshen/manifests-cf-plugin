@@ -1,22 +1,23 @@
 GIT
   remote: git://github.com/cloudfoundry/cf.git
-  revision: e574b781732e2cad3d186e3d46fe60991ff81697
+  revision: 53e3ed341ca1041573b88e9d51da5199d283d13f
   specs:
-    cf (0.5.1.rc4)
-      cfoundry (>= 0.5.3.rc5, < 0.6)
-      clouseau (~> 0.0)
+    cf (0.6.0.rc6)
+      cfoundry (>= 0.6.0.rc5, < 0.7)
       interact (~> 0.5)
       json_pure (~> 1.6)
+      manifests-cf-plugin (>= 0.7.0.rc3, < 0.8)
       mothership (>= 0.5.1, < 1.0)
       multi_json (~> 1.3)
+      tunnel-cf-plugin (>= 0.3.0.rc2, < 0.4)
 
 GIT
   remote: git://github.com/cloudfoundry/cfoundry.git
-  revision: 319718343b3092a1802f950ab5efbccd7f65d410
+  revision: efcbc10041ee1e0bb0b4e41261e71f7a9fddd272
   submodules: true
   specs:
-    cfoundry (0.5.3.rc5)
-      cf-uaa-lib (~> 1.3.9)
+    cfoundry (0.6.0.rc5)
+      cf-uaa-lib (~> 1.3.10)
       multi_json (~> 1.3)
       multipart-post (~> 1.1)
       rubyzip (~> 0.9)
@@ -25,19 +26,24 @@ GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.3.3)
+    caldecott-client (0.0.2)
+      multi_json (~> 1.3)
     cf-uaa-lib (1.3.10)
       multi_json
-    clouseau (0.0.2)
-      rubyzip (~> 0.9.9)
     crack (0.3.2)
     diff-lcs (1.1.3)
     fakefs (0.4.2)
     interact (0.5.2)
     json_pure (1.7.7)
+    manifests-cf-plugin (0.7.0.rc3)
+      cfoundry (>= 0.5.3.rc5, < 0.6)
+    mime-types (1.21)
     mothership (0.5.1)
-    multi_json (1.6.1)
+    multi_json (1.7.2)
     multipart-post (1.2.0)
     rake (10.0.3)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rr (1.0.4)
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
@@ -48,6 +54,13 @@ GEM
       diff-lcs (~> 1.1.3)
     rspec-mocks (2.12.2)
     rubyzip (0.9.9)
+    tunnel-cf-plugin (0.3.0.rc2)
+      addressable (~> 2.2)
+      caldecott-client (~> 0.0.2)
+      cfoundry (>= 0.6.0.rc2, < 0.7)
+      rest-client (~> 1.6)
+      uuidtools (~> 2.1)
+    uuidtools (2.1.3)
     webmock (1.9.0)
       addressable (>= 2.2.7)
       crack (>= 0.1.7)
