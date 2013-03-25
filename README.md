@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/cloudfoundry/manifests-cf-plugin.png)](https://travis-ci.org/cloudfoundry/manifests-cf-plugin)
+[![Gem Version](https://badge.fury.io/rb/manifests-cf-plugin.png)](http://badge.fury.io/rb/manifests-cf-plugin)
 
 ## Manifests
 ### Info
