@@ -1,3 +1,5 @@
+require "cf/errors"
+
 module CFManifests
   class InvalidManifest < CF::UserFriendlyError
     attr_reader :file
