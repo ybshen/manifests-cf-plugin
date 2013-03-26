@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "manifests-cf-plugin"
 
-  s.add_runtime_dependency "cfoundry", ">= 0.6.0.rc6", "< 0.7"
+  s.add_runtime_dependency "cfoundry", "~> 0.6.0"
 
   s.files         = %w{Rakefile} + Dir.glob("lib/**/*")
   s.test_files    = Dir.glob("spec/**/*")
